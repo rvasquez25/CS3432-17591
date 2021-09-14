@@ -76,4 +76,28 @@ int count_tokens(char* str){
 
      tokens[2] = "string"
 
-     token
+     tokens[3] = 0
+
+*/
+
+char *copy_str(char *inStr, short len){
+
+
+
+}
+
+
+
+char** tokenize(char* str){
+
+}
+
+
+
+
+
+void print_all_tokens(char** tokens){
+
+}
+
+
