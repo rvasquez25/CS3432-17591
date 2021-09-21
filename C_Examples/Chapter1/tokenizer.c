@@ -120,11 +120,14 @@ char** tokenize(char* str){
   arr[i++] = '\0';
   return arr;
 }
-
+//for loop to traverse and access memory
 void print_all_tokens(char** tokens){
+  int count = 0;
   for (int i = 0; *(tokens + i) != '\0'; i++) {
-    printf("%s\n", *(tokens + i));
+    printf("tokens[%d] = %s\n", i, *(tokens + i));
+    count = i;
   }
+  printf("tokens[%d] = 0", count + 1);
 }
 int main() {
   char string[] = "hello test this is a longer string just to see what happens";
