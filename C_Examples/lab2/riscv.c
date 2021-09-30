@@ -31,6 +31,9 @@ void init_regs(){
  * as a parameter to this function.
  */
 bool interpret(char* instr){
+  char* arr = strtok(instr);
+  //printf(arr);
+  
 	return true;
 }
 
