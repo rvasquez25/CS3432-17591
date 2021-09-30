@@ -129,8 +129,8 @@ void print_all_tokens(char** tokens){
   }
   printf("tokens[%d] = 0", count + 1);
 }
-int main() {
+/*int main() {
   char string[] = "hello test this is a longer string just to see what happens";
   print_all_tokens(tokenize(string));
-}
+  }*/
 
