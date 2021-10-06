@@ -12,7 +12,7 @@
    Zero terminators are not printable (therefore false) */
 //true if on a space character
 bool delim_character(char c){
-  if (c == '\t' || c == ' ' || c == '\0')
+  if (c == '\t' || c == ' ' || c == '\0' || c == ",")
     return true;
   return false;
 
@@ -28,7 +28,7 @@ bool delim_character(char c){
    Zero terminators are not printable (therefore false) */
 //false if on a space character
 bool non_delim_character(char c){
-  if (c == '\t' || c == ' ')
+  if (c == '\t' || c == ' ' || c == ",")
     return false;
   return true;
 
@@ -112,10 +112,11 @@ char *copy_str(char *inStr, short len){
 char** tokenize(char* str){
   char words = count_tokens(str) + 1;
   char **arr = (char **)malloc(sizeof(char *) * (words + 1));
+  const char c[2] = " ";
   int i = 0;
-  arr[i] = strtok(str, " ");
+  arr[i] = strtok(str, c);
   for (i = 1; i < words; i++) {
-    arr[i] = strtok(NULL, " ");
+    arr[i] = strtok(NULL, c);
   }
   arr[i++] = '\0';
   return arr;

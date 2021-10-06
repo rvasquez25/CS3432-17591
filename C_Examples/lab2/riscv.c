@@ -31,21 +31,23 @@ void init_regs(){
  * as a parameter to this function.
  */
 bool interpret(char* instr){
-  char* arr = strtok(instr);
-  //printf(arr);
-  
+	char **test = (char **)malloc(sizeof(char *) * (4 + 1));
+	//test = tokenize(instr, " ");
+	//print_all_tokens(test);
+	print_all_tokens(tokenize(instr));
 	return true;
 }
+
 
 
 /**
  * Simple demo program to show the usage of read_address() and write_address() found in memory.c
  * Before and after running this program, look at mem.txt to see how the values change.
  * Feel free to change "data_to_write" and "address" variables to see how these affect mem.txt
- * Use 0x before an int in C to hardcode it as text, but you may enter base 10 as you see fit.
+ * Use 0x before an int in C to harddata_to_writecode it as text, but you may enter base 10 as you see fit.
  */
 void write_read_demo(){
-	int32_t data_to_write = 0xFFF; // equal to 4095
+	int32_t data_to_write = 0xFFE; // equal to 4095
 	int32_t address = 0x98; // equal to 152
 	char* mem_file = "mem.txt";
 
@@ -63,6 +65,9 @@ void write_read_demo(){
  *
  */
 int main(){
+	char info[] = "LW X7 1000(X5)";
+	//scanf("%s", info);
+	printf("%d\n\n", interpret(info));
 	// Do not write any code between init_regs
 	init_regs(); // DO NOT REMOVE THIS LINE
 
