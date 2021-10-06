@@ -32,9 +32,10 @@ void init_regs(){
  */
 bool interpret(char* instr){
 	char **test = (char **)malloc(sizeof(char *) * (4 + 1));
-	//test = tokenize(instr, " ");
+	test = tokenize(instr);
 	//print_all_tokens(test);
-	print_all_tokens(tokenize(instr));
+	//print_all_tokens(tokenize(instr));
+	printf(test[1]);
 	return true;
 }
 
