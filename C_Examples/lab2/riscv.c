@@ -33,12 +33,45 @@ void init_regs(){
 bool interpret(char* instr){
 	char **test = (char **)malloc(sizeof(char *) * (4 + 1));
 	test = tokenize(instr);
-	//print_all_tokens(test);
 	//print_all_tokens(tokenize(instr));
-	printf(test[1]);
+	//printf("%s\n", test[0]);
+	//printf("%s\n", binaryConv(test[0]));
+	char lw[] = "LW", sw[] = "SW";
+	if (strcomp(test[0], sw) == 1) {
+		printf("cool");
+	}
 	return true;
 }
+int strcomp(char *inStr, char*inStr2){
+	int counter = 0, counter2 = 0;
 
+	for (int i = 0; *(inStr + i) != '\0'; i++){
+		counter++;
+	}
+	for (int i =0; *(inStr2 + i) != '\0'; i++) {
+		counter2++;
+	}
+	if (counter == counter2) {
+		for (int i = 0; i < counter; i++) {
+			if (*(inStr+i) != *(inStr2+i)) {
+				return 0;
+			}
+		}
+	}
+	else {
+		return 0;
+	}
+	return 1;
+}
+
+
+/*int binaryConv(char* instr) {
+	if (strcomp(instr, "LW") == 0) {
+		printf("penis\n");
+		//char binary = "0000011";
+		return 0000011;
+	}
+}*/
 
 
 /**
