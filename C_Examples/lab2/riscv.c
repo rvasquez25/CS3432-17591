@@ -149,7 +149,7 @@ int strcomp(char *inStr, char*inStr2){
  * Feel free to change "data_to_write" and "address" variables to see how these affect mem.txt
  * Use 0x before an int in C to harddata_to_writecode it as text, but you may enter base 10 as you see fit.
  */
-void write_read_demo(){
+/*void write_read_demo(){
 	int32_t data_to_write = 0xFFE; // equal to 4095
 	int32_t address = 0x98; // equal to 152
 	char* mem_file = "mem.txt";
@@ -161,7 +161,7 @@ void write_read_demo(){
 	int32_t read = read_address(address, mem_file);
 
 	printf("Read address %lu (0x%lX): %lu (0x%lX)\n", address, address, read, read); // %lu -> format as an long-unsigned
-}
+}*/
 void print_regs(){
 	int col_size = 10;
 	for(int i = 0; i < 8; i++){
