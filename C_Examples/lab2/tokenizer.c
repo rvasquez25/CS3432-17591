@@ -109,14 +109,14 @@ char *copy_str(char *inStr, short len){
 
 
 //tokenizes string utilizing malloc to allocate memory
-char** tokenize(char* str){
+char** tokenize(char* str, char delim[]){
   char words = count_tokens(str) + 1;
   char **arr = (char **)malloc(sizeof(char *) * (words + 1));
-  const char c[2] = " ";
+  //const char c[2] = delim;
   int i = 0;
-  arr[i] = strtok(str, c);
+  arr[i] = strtok(str, delim);
   for (i = 1; i < words; i++) {
-    arr[i] = strtok(NULL, c);
+    arr[i] = strtok(NULL, delim);
   }
   arr[i++] = '\0';
   return arr;
